@@ -15,7 +15,7 @@ var flicker_color = Color(1, 0, 0)
 
 
 func _init() -> void:
-	spawn_chance = 20
+	spawn_chance = 5
 	speed = 50
 
 
