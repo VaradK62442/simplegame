@@ -10,6 +10,7 @@ var player_sprite
 var default_sprite_colour
 var invinsible_colour
 var death_frames = 10
+var gameover_screen
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +20,7 @@ func _ready() -> void:
 	invinsible_colour = default_sprite_colour
 	invinsible_colour[3] = 0.5
 	invinsible_colour[0] = 155
+	gameover_screen = load("res://scenes/gameover.tscn").instantiate()
 
 
 func process_input(delta: float):
@@ -72,6 +74,15 @@ func take_damage(bullet):
 			for i in range(death_frames):
 				for index in range(len(bits)):
 					bits[index].position += directions[index]
+				await get_tree().create_timer(0.10).timeout
+			
+			#load gameover
+			gameover_screen.z_index = 100
+			gameover_screen.modulate.a = 0.0
+			get_parent().add_child(gameover_screen)
+			
+			for i in range(10, 0, -1):
+				gameover_screen.modulate.a = 1.0/i
 				await get_tree().create_timer(0.10).timeout
 			
 			#kill player node
