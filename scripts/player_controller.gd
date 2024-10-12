@@ -3,7 +3,7 @@ extends CharacterBody2D
 var health_label
 
 @export var speed = 400
-var slowdown = 1
+var speed_multiplier = 1
 var health = 3
 var vulnerable = true
 var player_sprite
@@ -36,7 +36,7 @@ func process_input(delta: float):
 			vel.y -= 1
 
 		if vel.length() > 0:
-			vel = vel.normalized() * speed * slowdown
+			vel = vel.normalized() * speed * speed_multiplier
 		
 		move_and_collide(vel * delta)
 
@@ -82,15 +82,13 @@ func take_damage(bullet):
 			vulnerable = true
 			player_sprite.modulate = default_sprite_colour
 
-func slow_down(bullet):
-	var slowdown_duration = 5
-	$slowdowntimer.start(slowdown_duration)
-	slowdown = 0.5
-	pass
+func slow_down(bullet,slow_down,duration):
+	$slowdowntimer.start(duration)
+	speed_multiplier = slow_down
 
 func _on_slowdowntimer_timeout():
 	print("fast again")
-	slowdown = 1
+	speed_multiplier = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
