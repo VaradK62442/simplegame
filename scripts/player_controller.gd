@@ -19,7 +19,6 @@ func _ready() -> void:
 	invinsible_colour = default_sprite_colour
 	invinsible_colour[3] = 0.5
 	invinsible_colour[0] = 155
-	pass # Replace with function body.
 
 
 func process_input(delta: float):
