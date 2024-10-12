@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdty5ylh0kdfp"]
 
-[ext_resource type="Script" path="res://scripts/timer.gd" id="1_conqh"]
+[ext_resource type="Script" path="res://scripts/hud_timer.gd" id="1_conqh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
