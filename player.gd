@@ -1,8 +1,8 @@
 extends CollisionPolygon2D
 
 @export var speed = 400
-var screen_size
 @export var rotation_degs = 1
+var screen_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,11 +13,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 
-	if Input.is_action_just_pressed("tilt_left"):
-		rotation -= rotation_degs
+	if Input.is_action_pressed("tilt_left"):
+		rotation_degrees-= rotation_degs
 
-	if Input.is_action_just_pressed("tilt_right"):
-		rotation += rotation_degs
+	if Input.is_action_pressed("tilt_right"):
+		rotation_degrees += rotation_degs
 
 	if Input.is_action_pressed("flap"):
 		velocity.y -= 1
@@ -26,4 +26,3 @@ func _process(delta: float) -> void:
 		velocity = velocity.normalized() * speed
 	
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)

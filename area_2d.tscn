@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bef1t8ats2x7n"]
+[gd_scene load_steps=5 format=3 uid="uid://cnseor8dsgv73"]
 
 [ext_resource type="Texture2D" uid="uid://dsh7ausgm7xuc" path="res://assets/cup.png" id="1_42tve"]
+[ext_resource type="Script" path="res://player.gd" id="1_k7pav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wv7cr"]
 size = Vector2(508, 20)
@@ -16,13 +17,16 @@ gravity_scale = 0.1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
 scale = Vector2(2, 2)
 polygon = PackedVector2Array(-13, 0, 13, 0, 21, -45, 18, -45, 10, -3, -10, -3, -18, -45, -21, -45)
+script = ExtResource("1_k7pav")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(0, -46)
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionPolygon2D"]
+position = Vector2(0, -23)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_42tve")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(500, 550)
+scale = Vector2(1.69, 1.69)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_wv7cr")
@@ -31,3 +35,7 @@ shape = SubResource("RectangleShape2D_wv7cr")
 position = Vector2(-3.8147e-05, -0.499982)
 scale = Vector2(506, 19)
 texture = SubResource("CanvasTexture_4jynt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(501, 395)
+scale = Vector2(1.69, 1.69)
