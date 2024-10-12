@@ -11,5 +11,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# moves in a straight line in direction of facing
-	rotation = rotation
 	position += Vector2(0, 1).rotated(rotation) * 100 * delta
