@@ -22,7 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += Vector2(0, 1).rotated(rotation) * speed * delta
 	spawntime += delta
-	if spawntime > minion_spawnrate:
+	if spawntime > minion_spawnrate and abs(position.x) < 500 and abs(position.y) < 500 :
 		spawntime = 0
 		var minion_one = enemy.instantiate()
 		var minion_two = enemy.instantiate()
