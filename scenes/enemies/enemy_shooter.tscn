@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://32270khrajd6"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_shooter.gd" id="1_5lb3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yawgi"]
+size = Vector2(20, 28)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fjyfv"]
+
+[node name="EnemyShooter" type="Area2D"]
+script = ExtResource("1_5lb3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yawgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.713921, 0.433395, 0.152032, 1)
+scale = Vector2(20.0774, 30.2055)
+texture = SubResource("CanvasTexture_fjyfv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
