@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://da2qqjsq7qgi7"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_bomb.gd" id="1_daqh2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yawgi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fjyfv"]
+
+[node name="EnemyBomb" type="Area2D"]
+script = ExtResource("1_daqh2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yawgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20.0774, 20.0855)
+texture = SubResource("CanvasTexture_fjyfv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
