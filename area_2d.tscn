@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bef1t8ats2x7n"]
+[gd_scene load_steps=7 format=3 uid="uid://bef1t8ats2x7n"]
 
 [ext_resource type="Texture2D" uid="uid://dsh7ausgm7xuc" path="res://assets/cup.png" id="1_42tve"]
+[ext_resource type="Texture2D" uid="uid://eh0ealxg82x6" path="res://ball2.svg" id="2_qp77i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wv7cr"]
 size = Vector2(508, 20)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4jynt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_75rnl"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_voq6j"]
+radius = 76.99
 
 [node name="Area2D" type="Node2D"]
 
@@ -31,3 +38,14 @@ shape = SubResource("RectangleShape2D_wv7cr")
 position = Vector2(-3.8147e-05, -0.499982)
 scale = Vector2(506, 19)
 texture = SubResource("CanvasTexture_4jynt")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_75rnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(495, 46)
+shape = SubResource("CircleShape2D_voq6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+position = Vector2(495, 46)
+texture = ExtResource("2_qp77i")
