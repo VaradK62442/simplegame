@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjyxswxkvp0de"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_basic.gd" id="1_rve6l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_petk3"]
+
+[node name="straight_line_e" type="CharacterBody2D"]
+script = ExtResource("1_rve6l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, 0, -5, -10, 0, -6, 5, -10, 10, 0, 0, 10)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(34.3458, 17.5066)
+texture = SubResource("CanvasTexture_petk3")

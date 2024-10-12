@@ -1,12 +1,35 @@
 extends Node2D
 
 var screen
-var straight_line_e = preload("res://scenes/enemies/straight_line_e.tscn")
+var enemy_dir_path = "res://scenes/enemies/"
+
+# var straight_line_e = preload("res://scenes/enemies/straight_line_e.tscn")
+var dir = DirAccess.open(enemy_dir_path)
 @export var offset = 16
+
+
+var all_enemies = []
+
+
+func load_all_enemies():
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+
+	while file_name != "":
+		if file_name.ends_with(".tscn"):
+			var enemy = load(enemy_dir_path + file_name)
+			all_enemies.append(enemy)
+		file_name = dir.get_next()
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen = get_viewport_rect().size
+	load_all_enemies()
+
+
+func get_random_enemy():
+	return all_enemies[randi() % all_enemies.size()]
 
 
 func get_random_pos():
@@ -34,7 +57,7 @@ func get_random_pos():
 func spawn_enemies():
 	# spawn enemies at random
 	# each frame has a chance of spawning a random enemy
-	var enemy = straight_line_e.instantiate()
+	var enemy = get_random_enemy().instantiate()
 	var spawn_chance = enemy.spawn_chance
 
 	var rand_num = randi() % 100
