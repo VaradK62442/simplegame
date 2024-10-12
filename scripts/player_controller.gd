@@ -53,6 +53,11 @@ func take_damage(bullet):
 			#delete player sprite
 			player_sprite.queue_free()
 			
+			#change music
+			var music_player = get_parent().get_node("AudioStreamPlayer2D")
+			music_player.volume_db = -10.0
+			music_player.pitch_scale = 0.5
+			
 			#create death particles
 			var directions = [Vector2(0, -1), Vector2(-0.5, -0.866), Vector2(-0.5, 0.866), Vector2(0, 1), Vector2(0.5, 0.866), Vector2(0.5, -0.866)]
 			var bits = [Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new()]
