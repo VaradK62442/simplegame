@@ -51,15 +51,20 @@ func take_damage(bullet):
 		
 		if health <= 0:
 			
-			#delete player sprite
+			# stop timer
+			get_parent().get_node("Control").get_node("Time").is_running = false
+			var end_time = get_parent().get_node("Control").get_node("Time").text
+			get_parent().get_node("Control").queue_free()
+			
+			# delete player sprite
 			player_sprite.queue_free()
 			
-			#change music
+			# change music
 			var music_player = get_parent().get_node("AudioStreamPlayer2D")
 			music_player.volume_db = -10.0
 			music_player.pitch_scale = 0.5
 			
-			#create death particles
+			# create death particles
 			var directions = [Vector2(0, -1), Vector2(-0.5, -0.866), Vector2(-0.5, 0.866), Vector2(0, 1), Vector2(0.5, 0.866), Vector2(0.5, -0.866)]
 			var bits = [Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new()]
 			
@@ -70,22 +75,23 @@ func take_damage(bullet):
 				sprite.modulate = default_sprite_colour
 				add_child(sprite)
 			
-			#animate death particles
+			# animate death particles
 			for i in range(death_frames):
 				for index in range(len(bits)):
 					bits[index].position += directions[index]
 				await get_tree().create_timer(0.10).timeout
 			
-			#load gameover
+			# load gameover
 			gameover_screen.z_index = 100
 			gameover_screen.modulate.a = 0.0
 			get_parent().add_child(gameover_screen)
+			get_parent().get_node("Gameover").get_node("Score").text = end_time
 			
 			for i in range(10, 0, -1):
 				gameover_screen.modulate.a = 1.0/i
 				await get_tree().create_timer(0.10).timeout
 			
-			#kill player node
+			# kill player node
 			queue_free()
 			
 		else:

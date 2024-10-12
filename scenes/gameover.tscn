@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dw80vex8y2fu2"]
+[gd_scene format=3 uid="uid://caq7kcglppkd2"]
 
 [node name="Gameover" type="Control"]
 layout_mode = 3
@@ -31,3 +31,12 @@ offset_right = 99.0
 offset_bottom = 30.0
 theme_override_font_sizes/font_size = 20
 text = "BUT LIFE GOES ON..."
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = -63.0
+offset_top = 27.0
+offset_right = 93.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 15
+text = "Time: 00:00.00"
