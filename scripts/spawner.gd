@@ -70,12 +70,12 @@ func spawn_enemies():
 	var enemy = get_random_enemy().instantiate()
 	var spawn_chance = enemy.spawn_chance
 
-	var rand_num = randi() % 100
+	var rand_num = randi_range(1, 100)
 	if rand_num < spawn_chance:
 
 		var rand_pos = get_random_pos()
 		enemy.position = Vector2(rand_pos[0], rand_pos[1])
-		enemy.rotation = randi_range(0, 360)
+		enemy.rotation_degrees = randi_range(0, 360)
 
 		get_parent().add_child(enemy)
 
