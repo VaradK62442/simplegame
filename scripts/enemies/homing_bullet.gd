@@ -1,6 +1,9 @@
-extends "res://scripts/enemies/enemy_basic.gd"
+extends EnemyBasic
 
 var target
+
+func _init() -> void:
+	spawn_chance = 2
 
 func _ready() -> void:
 	super._ready()

@@ -1,6 +1,7 @@
+class_name EnemyBasic
 extends CharacterBody2D
 
-@export var spawn_chance = 10 # chance per frame of spawning an enemy (out of 100)
+var spawn_chance = 10 # chance per frame of spawning an enemy (out of 100)
 var screen
 
 # Called when the node enters the scene tree for the first time.
