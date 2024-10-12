@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8yr4uqju7i0"]
+
+[ext_resource type="PackedScene" uid="uid://cittpps5xu3gd" path="res://scenes/enemies/straight_line_e.tscn" id="1_gmlba"]
+[ext_resource type="Script" path="res://scripts/enemies/homing_bullet.gd" id="2_683xc"]
+
+[node name="homing_e" instance=ExtResource("1_gmlba")]
+script = ExtResource("2_683xc")
