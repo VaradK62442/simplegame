@@ -35,26 +35,11 @@ func enemies_to_cumsum(enemies) -> Array:
 		print(cumsum)
 	return cumsum
 
-func load_all_enemies():
-	const enemy_dir_path = "res://scenes/enemies/"
-	var dir = DirAccess.open(enemy_dir_path)
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-
-	while file_name != "":
-		if file_name.ends_with(".tscn"):
-			var enemy = load(enemy_dir_path + file_name)
-			all_enemies.append(enemy)
-			max_difficulty += enemy.instantiate().spawn_chance
-			cumsum.append(max_difficulty)
-		file_name = dir.get_next()
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	t = TimerTime.new()
 	add_child(t)
 	screen = get_viewport_rect().size
-	#load_all_enemies()
 	cumsum = enemies_to_cumsum(all_enemies)
 
 
