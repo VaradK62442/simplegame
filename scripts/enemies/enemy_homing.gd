@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if target and spawntime < 10:
 		direction = (target.position - position).normalized()
 		rotation = direction.angle()
-	position += direction * 50 * delta
+	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
 	# tell only player
