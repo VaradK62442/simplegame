@@ -26,7 +26,8 @@ func process_input(delta: float):
 
 
 func take_damage(bullet):
-	print("yeowch " + bullet.name)
+	queue_free()
+	# TODO: add game over
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

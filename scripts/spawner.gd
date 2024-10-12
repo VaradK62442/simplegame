@@ -1,7 +1,17 @@
 extends Node2D
 
 var screen
-var enemy_dir_path = "res://scenes/enemies/"
+const enemy_dir_path = "res://scenes/enemies/"
+
+func spawn_rate_to_difficulty(rate):
+	if rate < 11:
+		return EnemyDifficulty.INSANE
+	elif rate < 31:
+		return EnemyDifficulty.HARD
+	elif rate < 71:
+		return EnemyDifficulty.MEDIUM
+	else:
+		return EnemyDifficulty.EASY
 
 # var straight_line_e = preload("res://scenes/enemies/straight_line_e.tscn")
 var dir = DirAccess.open(enemy_dir_path)

@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddv0sdb40aieq"]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_o0tpy"]
-[ext_resource type="Texture2D" uid="uid://ud4i6ke2awjx" path="res://assets/player.svg" id="2_ph5lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eijq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dvyiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8haq"]
 
@@ -14,8 +15,9 @@ script = ExtResource("1_o0tpy")
 shape = SubResource("RectangleShape2D_3eijq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.199215, 0.200787)
-texture = ExtResource("2_ph5lr")
+modulate = Color(0.849573, 0.0541859, 0.0310228, 1)
+scale = Vector2(20.0392, 20.1608)
+texture = SubResource("CanvasTexture_dvyiy")
 
 [node name="Area2D" type="Area2D" parent="."]
 
