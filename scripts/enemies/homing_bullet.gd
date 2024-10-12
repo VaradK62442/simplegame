@@ -18,5 +18,5 @@ func _process(delta: float) -> void:
 	spawntime += delta
 	if target and spawntime < 10:
 		direction = (target.position - position).normalized()
-		rotation = direction.angle()
+		rotation = direction.angle() - PI/2
 	position += direction * 50 * delta
