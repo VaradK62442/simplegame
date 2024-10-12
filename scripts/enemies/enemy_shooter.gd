@@ -9,7 +9,7 @@ var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
 @export var minion_spawnrate = 3 #seconds
 
 func _init() -> void:
-	spawn_chance = 5
+	spawn_chance = 10
 	speed = 50
 
 # Called when the node enters the scene tree for the first time.
