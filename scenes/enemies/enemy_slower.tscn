@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyuw7672mk0xu"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_slower.gd" id="1_mpwuv"]
+[ext_resource type="PackedScene" uid="uid://csj33vubakog0" path="res://scenes/enemies/enemy_basic.tscn" id="1_r38fi"]
+
+[node name="EnemyBasic" instance=ExtResource("1_r38fi")]
+script = ExtResource("1_mpwuv")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0.0957621, 0.507011, 0.818232, 1)

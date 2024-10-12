@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dw80vex8y2fu2"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.729412)
+layout_mode = 0
+offset_left = -2269.0
+offset_top = -1650.0
+offset_right = -2229.0
+offset_bottom = -1610.0
+scale = Vector2(109.426, 84.6529)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -174.0
+offset_top = -74.0
+offset_right = 426.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 20
+text = "BUT LIFE GOES ON..."

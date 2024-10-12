@@ -9,7 +9,7 @@ var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
 @export var minion_spawnrate = 3 #seconds
 
 func _init() -> void:
-	spawn_chance = 5
+	spawn_chance = 2
 	speed = 50
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += Vector2(0, 1).rotated(rotation) * speed * delta
 	spawntime += delta
-	if spawntime > minion_spawnrate:
+	if spawntime > minion_spawnrate and abs(position.x) < 500 and abs(position.y) < 500 :
 		spawntime = 0
 		var minion_one = enemy.instantiate()
 		var minion_two = enemy.instantiate()
