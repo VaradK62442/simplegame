@@ -1,8 +1,12 @@
-extends "res://scripts/enemies/enemy_basic.gd"
+extends EnemyBasic
 
 var target
 var spawntime
 var direction
+
+func _init() -> void:
+	spawn_chance = 2
+
 func _ready() -> void:
 	super._ready()
 	spawntime = 0
