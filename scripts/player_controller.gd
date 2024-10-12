@@ -25,6 +25,10 @@ func process_input(delta: float):
 	move_and_collide(vel * delta)
 
 
+func take_damage(bullet):
+	print("yeowch " + bullet.name)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	process_input(delta)
