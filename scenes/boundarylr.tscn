@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://vr5fm26xqun5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbt0t"]
+size = Vector2(45, 531)
+
+[sub_resource type="GDScript" id="GDScript_1mriv"]
+script/source = "extends CollisionShape2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-327.5, 148.5)
+shape = SubResource("RectangleShape2D_mbt0t")
+script = SubResource("GDScript_1mriv")

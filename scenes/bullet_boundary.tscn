@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s4wcsw6l1ne"]
+
+[ext_resource type="Script" path="res://scripts/bullet_boundary.gd" id="1_o3yv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggge8"]
+size = Vector2(407.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24qj5"]
+size = Vector2(20, 296)
+
+[node name="BulletBoundary" type="Area2D"]
+script = ExtResource("1_o3yv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 107)
+shape = SubResource("RectangleShape2D_ggge8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3, -145)
+shape = SubResource("RectangleShape2D_ggge8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(217, -15)
+shape = SubResource("RectangleShape2D_24qj5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-211, -19)
+shape = SubResource("RectangleShape2D_24qj5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
