@@ -6,7 +6,7 @@ var direction = Vector2.ZERO
 
 
 func _init() -> void:
-	spawn_chance = 1
+	spawn_chance = 5
 	speed = 50
 
 # Called when the node enters the scene tree for the first time.
