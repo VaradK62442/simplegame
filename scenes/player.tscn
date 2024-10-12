@@ -23,3 +23,7 @@ texture = SubResource("CanvasTexture_dvyiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_w8haq")
+
+[node name="slowdowntimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="slowdowntimer" to="." method="_on_slowdowntimer_timeout"]
