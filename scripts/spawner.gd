@@ -67,8 +67,6 @@ func spawn_enemies():
 		enemy.position = Vector2(rand_pos[0], rand_pos[1])
 		enemy.rotation = randi_range(0, 360)
 
-		print(enemy.spawn_chance)
-
 		get_parent().add_child(enemy)
 
 

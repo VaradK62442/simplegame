@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vr5fm26xqun5" path="res://scenes/boundarylr.tscn" id="3_x17sr"]
 [ext_resource type="PackedScene" uid="uid://du8abybmg61qq" path="res://scenes/spawner.tscn" id="4_jseqi"]
 [ext_resource type="PackedScene" uid="uid://c1s4wcsw6l1ne" path="res://scenes/bullet_boundary.tscn" id="5_7flbh"]
-[ext_resource type="PackedScene" uid="uid://cdty5ylh0kdfp" path="res://scenes/HUD.tscn" id="6_5aq0x"]
+[ext_resource type="PackedScene" path="res://scenes/HUD.tscn" id="6_5aq0x"]
 
 [node name="Main" type="Node2D"]
 
