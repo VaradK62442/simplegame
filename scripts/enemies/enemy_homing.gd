@@ -20,9 +20,12 @@ func _process(delta: float) -> void:
 	target = get_parent().get_node("Player")
 	spawntime += delta
 	
-	if target and spawntime < 20:
+	if target and spawntime < 10:
 		direction = (target.position - position).normalized()
 		rotation = direction.angle()
+	else:
+		var homing_sprite = get_node("Sprite2D")
+		homing_sprite.modulate = Color(1,1,1)
 	position += direction * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
