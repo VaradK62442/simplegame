@@ -48,6 +48,7 @@ func take_damage(bullet):
 		#decrease health and update label
 		health -= 1
 		health_label.text = "Health: %01d/3" % [health]
+		get_parent().get_node("Control").update_health(health)
 		
 		if health <= 0:
 			
