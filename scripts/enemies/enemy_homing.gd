@@ -3,7 +3,7 @@ extends EnemyBasic
 var target
 var spawntime
 var direction = Vector2.ZERO
-
+var homing_time = 15
 
 func _init() -> void:
 	spawn_chance = 5
@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	target = get_parent().get_node("Player")
 	spawntime += delta
 	
-	if target and spawntime < 10:
+	if target and spawntime < homing_time:
 		direction = (target.position - position).normalized()
 		rotation = direction.angle()
 	else:
