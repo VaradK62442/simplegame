@@ -1,7 +1,7 @@
 extends Area2D
 class_name EnemyBasic
 
-var spawn_chance: int = 10 #perecntage chance 1-100
+var spawn_chance: int = 50 #proportion of spawning in the enemy array, out of 100
 var speed: int = 100
 
 # Called when the node enters the scene tree for the first time.

@@ -1,41 +1,46 @@
 extends Node2D
 
+var max_difficulty = 0
+var cumsum = []
 var screen
-const enemy_dir_path = "res://scenes/enemies/"
+var t
+var current_time = 0.0
+var prev_time = 0.0
+const SPAWN_EVERY_MS = 250
 
-func spawn_rate_to_difficulty(rate):
-	if rate < 11:
+func spawn_chance_to_difficulty(chance):
+	if chance < 11:
 		return EnemyDifficulty.INSANE
-	elif rate < 31:
+	elif chance < 31:
 		return EnemyDifficulty.HARD
-	elif rate < 71:
+	elif chance < 71:
 		return EnemyDifficulty.MEDIUM
 	else:
 		return EnemyDifficulty.EASY
 
-# var straight_line_e = preload("res://scenes/enemies/straight_line_e.tscn")
-var dir = DirAccess.open(enemy_dir_path)
 @export var offset = 16
 
 
-var all_enemies = []
+var all_enemies = [
+	preload("res://scenes/enemies/enemy_basic.tscn"), 
+	preload("res://scenes/enemies/enemy_homing.tscn"),
+	preload("res://scenes/enemies/enemy_shooter.tscn"),
+]
 
-
-func load_all_enemies():
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-
-	while file_name != "":
-		if file_name.ends_with(".tscn"):
-			var enemy = load(enemy_dir_path + file_name)
-			all_enemies.append(enemy)
-		file_name = dir.get_next()
-
+func enemies_to_cumsum(enemies) -> Array:
+	# THIS ALSO SETS max_difficulty, YOU HAVE BEEN WARNED
+	for e in enemies:
+		max_difficulty += e.instantiate().spawn_chance
+		cumsum.append(max_difficulty)
+		print(cumsum)
+	return cumsum
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	t = TimerTime.new()
+	add_child(t)
 	screen = get_viewport_rect().size
-	load_all_enemies()
+	cumsum = enemies_to_cumsum(all_enemies)
 
 
 func get_random_enemy():
@@ -64,22 +69,22 @@ func get_random_pos():
 	return [rand_x, rand_y]
 
 
-func spawn_enemies():
-	# spawn enemies at random
-	# each frame has a chance of spawning a random enemy
-	var enemy = get_random_enemy().instantiate()
-	var spawn_chance = enemy.spawn_chance
-
-	var rand_num = randi_range(1, 100)
-	if rand_num < spawn_chance:
-
-		var rand_pos = get_random_pos()
-		enemy.position = Vector2(rand_pos[0], rand_pos[1])
-		enemy.rotation_degrees = randi_range(0, 360)
-
-		get_parent().add_child(enemy)
-
+func spawn_enemies():	
+	var rand_num = randi_range(1, max_difficulty)
+	var i = 0
+	while i < cumsum.size() and rand_num > cumsum[i]:
+		i += 1
+		
+	var enemy = all_enemies[i].instantiate()
+	var rand_pos = get_random_pos()
+	get_parent().add_child(enemy)
+	print(enemy.name)
+	enemy.position = Vector2(rand_pos[0], rand_pos[1])
+	enemy.rotation_degrees = randi_range(0, 360)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawn_enemies()
+	current_time = t.get_time()
+	if (current_time - prev_time) > SPAWN_EVERY_MS:
+		prev_time = current_time
+		spawn_enemies()

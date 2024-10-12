@@ -1,15 +1,20 @@
-extends Label
+extends Node
+class_name TimerTime
 
 var elapsed_time = 0.0
+var minutes = 0.0
+var seconds = 0.0
+var milliseconds = 0.0
 
 func _process(delta: float) -> void:
-	# Update the elapsed time
 	elapsed_time += delta
-	
-	# Format the elapsed time into hours, minutes, and seconds
-	var minutes = int((int(elapsed_time) % 3600) / 60)
-	var seconds = int(int(elapsed_time) % 60)
-	var milliseconds = int(elapsed_time * 100) % 100
 
-	# Update the Label with the formatted time
-	text = "Time: %02d:%02d.%02d" % [minutes, seconds, milliseconds]
+	minutes = int((int(elapsed_time) % 3600) / 60)
+	seconds = int(int(elapsed_time) % 60)
+	milliseconds = int(elapsed_time * 1000)
+
+func get_time() -> float:
+	return elapsed_time * 1000
+
+func get_time_pretty() -> Array:
+	return [minutes, seconds, milliseconds]
