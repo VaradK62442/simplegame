@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 	minutes = int((int(elapsed_time) % 3600) / 60)
 	seconds = int(int(elapsed_time) % 60)
-	milliseconds = int(elapsed_time * 1000)
+	milliseconds = int(elapsed_time * 1000) % 1000
 
 func get_time() -> float:
 	return elapsed_time * 1000
