@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmosr8nm5c7rj"]
+[gd_scene load_steps=7 format=3 uid="uid://dmosr8nm5c7rj"]
 
 [ext_resource type="PackedScene" uid="uid://ddv0sdb40aieq" path="res://scenes/player.tscn" id="1_f4iep"]
 [ext_resource type="PackedScene" uid="uid://73imus2xxrpo" path="res://scenes/boundaryud.tscn" id="2_k1m11"]
 [ext_resource type="PackedScene" uid="uid://vr5fm26xqun5" path="res://scenes/boundarylr.tscn" id="3_x17sr"]
 [ext_resource type="PackedScene" uid="uid://du8abybmg61qq" path="res://scenes/spawner.tscn" id="4_jseqi"]
 [ext_resource type="PackedScene" uid="uid://c1s4wcsw6l1ne" path="res://scenes/bullet_boundary.tscn" id="5_7flbh"]
+[ext_resource type="PackedScene" uid="uid://cdty5ylh0kdfp" path="res://scenes/HUD.tscn" id="6_5aq0x"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,3 +33,9 @@ position = Vector2(-1, 2)
 [node name="BulletBoundary" parent="." instance=ExtResource("5_7flbh")]
 position = Vector2(2, 58)
 scale = Vector2(4.11468, 4.7293)
+
+[node name="Control" parent="." instance=ExtResource("6_5aq0x")]
+offset_left = -355.0
+offset_top = -236.0
+offset_right = -315.0
+offset_bottom = -196.0
