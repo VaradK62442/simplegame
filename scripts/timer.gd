@@ -17,4 +17,4 @@ func get_time() -> float:
 	return elapsed_time * 1000
 
 func get_time_pretty() -> Array:
-	return [minutes, seconds, milliseconds]
+	return [minutes, seconds, int(milliseconds / 10)]
