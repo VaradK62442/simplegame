@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	target = get_parent().get_node("Player")
 	spawntime += delta
 	
-	if target and spawntime < 10:
+	if target and spawntime < 20:
 		direction = (target.position - position).normalized()
 		rotation = direction.angle()
 	position += direction * speed * delta
