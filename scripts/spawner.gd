@@ -153,4 +153,3 @@ func _process(delta: float) -> void:
 	if (current_time - prev_difficulty_time) > DIFFICULTY_INTERVAL:
 		prev_difficulty_time = current_time
 		current_difficulty = min(current_difficulty + 1, EnemyDifficulty.INSANE)
-		print("Current difficulty: ", current_difficulty)
