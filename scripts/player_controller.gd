@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 var health_label
 
-@export var speed = 400
-var speed_multiplier = 1
-var health = 3
-var vulnerable = true
+var speed = Config.player_controller.speed
+var speed_multiplier = Config.player_controller.speed_multiplier
+var health = Config.player_controller.health
+var vulnerable = Config.player_controller.vulnerable
 var player_sprite
 var default_sprite_colour
 var invinsible_colour
-var death_frames = 10
+var death_frames = Config.player_controller.death_frames
 var gameover_screen
 
 # Called when the node enters the scene tree for the first time.
@@ -18,8 +18,8 @@ func _ready() -> void:
 	player_sprite = get_node("Sprite2D")
 	default_sprite_colour = player_sprite.modulate
 	invinsible_colour = default_sprite_colour
-	invinsible_colour[3] = 0.5
-	invinsible_colour[0] = 155
+	invinsible_colour[3] = Config.player_controller.invinsible_colour_alpha
+	invinsible_colour[0] = Config.player_controller.invinsible_colour_red
 	gameover_screen = load("res://scenes/gameover.tscn").instantiate()
 
 
