@@ -27,9 +27,4 @@ func _process(delta: float) -> void:
 		var homing_sprite = get_node("Sprite2D")
 		homing_sprite.modulate = Color(1,1,1)
 	position += direction * speed * delta
-
-func _on_body_entered(body: Node2D) -> void:
-	# tell only player
-	if body.name == "Player":
-		body.take_damage(self)
-		queue_free()
+	
