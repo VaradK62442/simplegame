@@ -90,9 +90,9 @@ func take_damage(bullet):
 			for i in range(10, 0, -1):
 				gameover_screen.modulate.a = 1.0/i
 				await get_tree().create_timer(0.10).timeout
-			
-			# kill player node
-			queue_free()
+				
+			for sprite in bits:
+				sprite.queue_free()
 			
 		else:
 			

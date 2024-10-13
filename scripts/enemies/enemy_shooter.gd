@@ -3,7 +3,8 @@ class_name EnemyShooter
 
 var target
 var spawntime
-var direction = Vector2.ZERO
+var direction
+var turned = false
 
 var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
 
@@ -21,6 +22,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not turned:
+		direction = (target.position - position).normalized()
+		rotation = direction.angle() - PI/2
+		turned = true
 	position += Vector2(0, 1).rotated(rotation) * speed * delta
 	spawntime += delta
 	if spawntime > minion_spawnrate and abs(position.x) < 500 and abs(position.y) < 500 :
@@ -30,8 +35,8 @@ func _process(delta: float) -> void:
 		
 		minion_one.position = position
 		minion_two.position = position
-		minion_one.rotation = rotation + 90
-		minion_two.rotation = rotation - 90
+		minion_one.rotation = rotation + 90 + PI/2
+		minion_two.rotation = rotation - 90 + PI/2
 
 		get_parent().add_child(minion_one)
 		get_parent().add_child(minion_two)

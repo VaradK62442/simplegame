@@ -2,7 +2,8 @@ extends EnemyBasic
 
 var target
 var spawntime
-var direction = Vector2.ZERO
+var direction
+var turned = false
 
 var enemy = load("res://scenes/enemies/enemy_homing.tscn")
 
@@ -20,6 +21,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if not turned:
+		direction = (target.position - position).normalized()
+		rotation = direction.angle() - PI/2
+		turned = true
 	position += Vector2(0, 1).rotated(rotation) * speed * delta
 	spawntime += delta
 	if spawntime > minion_spawnrate and abs(position.x) < 500 and abs(position.y) < 500 :
@@ -28,9 +33,9 @@ func _process(delta: float) -> void:
 		var minion_two = enemy.instantiate()
 		var minion_three = enemy.instantiate()
 		
-		minion_one.position = position
-		minion_two.position = position
-		minion_three.position = position
+		minion_one.position = position + Vector2(10, 0)
+		minion_two.position = position + Vector2(-7, 7)
+		minion_three.position = position + Vector2(-7, -7)
 		minion_one.rotation = rotation + 60
 		minion_two.rotation = rotation - 60
 		minion_three.rotation = rotation - 120
