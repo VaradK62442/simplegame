@@ -58,6 +58,7 @@ func take_damage(bullet):
 			
 			# delete player sprite
 			player_sprite.queue_free()
+			position.x = 10_000
 			
 			# change music
 			var music_player = get_parent().get_node("AudioStreamPlayer2D")
@@ -93,6 +94,7 @@ func take_damage(bullet):
 				
 			for sprite in bits:
 				sprite.queue_free()
+			
 			
 		else:
 			
