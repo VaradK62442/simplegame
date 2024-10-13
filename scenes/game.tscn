@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmosr8nm5c7rj"]
+[gd_scene load_steps=11 format=3 uid="uid://dmosr8nm5c7rj"]
 
 [ext_resource type="PackedScene" uid="uid://ddv0sdb40aieq" path="res://scenes/player.tscn" id="1_f4iep"]
 [ext_resource type="PackedScene" uid="uid://73imus2xxrpo" path="res://scenes/boundaryud.tscn" id="2_k1m11"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="7_emu4b"]
 [ext_resource type="AudioStream" uid="uid://cdgv5448173qo" path="res://assets/Tea K Pea - mewmew.mp3" id="7_ro1jd"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="8_e3xgd"]
+[ext_resource type="PackedScene" uid="uid://dkitkh2d1fyjw" path="res://scenes/low-health-glow.tscn" id="10_3kaa8"]
 
 [node name="Main" type="Node2D"]
 
@@ -47,5 +48,10 @@ script = ExtResource("7_emu4b")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ro1jd")
 script = ExtResource("8_e3xgd")
+
+[node name="Low-health-glow" parent="." instance=ExtResource("10_3kaa8")]
+visible = false
+position = Vector2(-363, -243)
+scale = Vector2(1.005, 1.015)
 
 [connection signal="area_entered" from="BulletBoundary" to="BulletBoundary" method="_on_area_entered"]
