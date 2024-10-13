@@ -10,11 +10,11 @@ const SPAWN_EVERY_MS = Config.spawning.SPAWN_EVERY_MS
 var enemy_count = 0
 var max_enemies = 10 # max number of enemies on screen at every spawn_every_ms time
 const FINAL_MAX_ENEMIES = 40
-const DIFFICULTY_INTERVAL = 60_000
+const DIFFICULTY_INTERVAL = 30_000
 var prev_max_enemy_time = 0.0
 var prev_difficulty_time = 0.0
 var current_difficulty = EnemyDifficulty.EASY
-var MAX_ENEMY_INTERVAL = 10_000
+var MAX_ENEMY_INTERVAL = 5_000
 
 
 func spawn_chance_to_difficulty(chance):
