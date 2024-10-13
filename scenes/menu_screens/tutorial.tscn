@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cegxor0i55ngi"]
+
+[ext_resource type="Script" path="res://scripts/back-to-menu.gd" id="1_4y1f5"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.729412)
+layout_mode = 0
+offset_left = -2269.0
+offset_top = -1650.0
+offset_right = -2229.0
+offset_bottom = -1610.0
+scale = Vector2(109.426, 84.6529)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -153.0
+offset_right = 504.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "TUTORIAL"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -229.0
+offset_top = -62.0
+offset_right = 233.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 16
+text = "> You control a red square using either WASD or arrow keys
+> You have three lives, live for as long as possible!
+> Enemies will fly in from the sides of the screen with various effects - some hurt you and others apply statuses
+> Enemy spawns and enemy difficulties increase with time
+> EASY: 0-30s ; MED: 30-60s ; HARD: 60-90s ; INSANE: 90s+
+> Best of luck and enjoy!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 151.0
+offset_right = 40.0
+offset_bottom = 182.0
+text = "BACK
+"
+script = ExtResource("1_4y1f5")
+
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

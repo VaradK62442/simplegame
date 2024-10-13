@@ -37,3 +37,12 @@ z_index = 5
 position = Vector2(642, 15)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jxbid")
+
+[node name="Difficulty" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 98.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 24
+text = "Easy"

@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkitkh2d1fyjw"]
+
+[ext_resource type="Shader" path="res://scenes/low-health-glow.gdshader" id="1_ops7s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7obga"]
+shader = ExtResource("1_ops7s")
+
+[node name="Low-health-glow" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7obga")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 12)
+color = Color(0.853183, 0.0534984, 0.0306211, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7obga")
+offset_left = 723.0
+offset_top = 478.0
+offset_right = 763.0
+offset_bottom = 518.0
+rotation = 3.13513
+scale = Vector2(1, 12)
+color = Color(0.853183, 0.0534984, 0.0306211, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7obga")
+offset_left = -31.0
+offset_top = 477.0
+offset_right = 9.0
+offset_bottom = 517.0
+rotation = -1.56861
+scale = Vector2(1, 19.6046)
+color = Color(0.853183, 0.0534984, 0.0306211, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7obga")
+offset_left = 719.0
+offset_right = 759.0
+offset_bottom = 40.0
+rotation = 1.56928
+scale = Vector2(1, 18.1219)
+color = Color(0.853183, 0.0534984, 0.0306211, 1)

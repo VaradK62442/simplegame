@@ -1,4 +1,4 @@
-extends Area2D
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,10 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# when object touches, kill it
-	pass	
+	pass
 
 
-func _on_area_entered(area: Area2D) -> void:
-	area.queue_free() # eplace with function body.
-	
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

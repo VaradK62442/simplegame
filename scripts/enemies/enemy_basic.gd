@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position += Vector2(0, 1).rotated(rotation) * speed * delta
+	position += Vector2(1, 0).rotated(rotation) * speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
 	# tell only player

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4u0m28yvll6d"]
+
+[ext_resource type="AudioStream" uid="uid://cdgv5448173qo" path="res://assets/Tea K Pea - mewmew.mp3" id="2_so4c2"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="3_ak4ua"]
+[ext_resource type="PackedScene" uid="uid://c3k0pnft55pwp" path="res://scenes/menu_screens/mainmenu.tscn" id="3_vc1jk"]
+[ext_resource type="PackedScene" uid="uid://cegxor0i55ngi" path="res://scenes/menu_screens/tutorial.tscn" id="4_cpg6n"]
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="5_csjyq"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_so4c2")
+script = ExtResource("3_ak4ua")
+
+[node name="Mainmenu" parent="." instance=ExtResource("3_vc1jk")]
+
+[node name="Tutorial" parent="." instance=ExtResource("4_cpg6n")]
+visible = false
+script = ExtResource("5_csjyq")
