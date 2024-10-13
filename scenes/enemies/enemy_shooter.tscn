@@ -15,6 +15,7 @@ shape = SubResource("RectangleShape2D_yawgi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.713921, 0.433395, 0.152032, 1)
+z_index = 5
 scale = Vector2(20.0774, 30.2055)
 texture = SubResource("CanvasTexture_fjyfv")
 
