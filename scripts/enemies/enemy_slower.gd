@@ -7,10 +7,10 @@ var slow_down
 var duration
 
 func _init() -> void:
-	slow_down = 0.5
-	duration = 5
-	spawn_chance = 5
-	speed = 400
+	slow_down = Config.enemy_slower.slow_down
+	duration = Config.enemy_slower.duration
+	spawn_chance = Config.enemy_slower.spawn_chance
+	speed = Config.enemy_slower.speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

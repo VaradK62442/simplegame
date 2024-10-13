@@ -6,11 +6,11 @@ var direction = Vector2.ZERO
 
 var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
 
-@export var minion_spawnrate = 3 #seconds
+var minion_spawnrate = Config.enemy_shooter.minion_spawnrate # seconds
 
 func _init() -> void:
-	spawn_chance = 2
-	speed = 50
+	spawn_chance = Config.enemy_shooter.spawn_chance
+	speed = Config.enemy_shooter.speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4u0m28yvll6d"]
+[gd_scene load_steps=4 format=3 uid="uid://bk4dasfbihwvc"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_y3fea"]
 [ext_resource type="AudioStream" uid="uid://cdgv5448173qo" path="res://assets/Tea K Pea - mewmew.mp3" id="2_so4c2"]

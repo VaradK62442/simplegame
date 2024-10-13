@@ -9,11 +9,11 @@ var sprite
 
 var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
 
-@export var minion_spawnrate = 3 #seconds
+var minion_spawnrate = Config.enemy_flashbang.minion_spawnrate # seconds
 
 func _init() -> void:
-	spawn_chance = 10
-	speed = 150
+	spawn_chance = Config.enemy_flashbang.spawn_chance
+	speed = Config.enemy_flashbang.speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

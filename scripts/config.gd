@@ -2,13 +2,13 @@ extends Node2D
 
 
 class enemy_basic:
-	const spawn_chance = 50 # proportion of spawning in the enemy array, out of 100
+	const spawn_chance = 80 # proportion of spawning in the enemy array, out of 100
 	const speed = 100
 
 class enemy_homing:
 	const direction = Vector2.ZERO
 	const homing_time = 15
-	const spawn_chance = 5
+	const spawn_chance = 20
 	const speed = 50
 	const sprite_modulate = Color(1,1,1)
 
@@ -24,8 +24,26 @@ class enemy_bomb:
 	const enemy = preload("res://scenes/enemies/enemy_shooter_minion.tscn")
 	const n_debris = 10
 
-	const spawn_chance = 10
+	const spawn_chance = 5
 	const speed = 50
+
+class enemy_flashbang:
+	const minion_spawnrate = 3
+
+	const spawn_chance = 65
+	const speed = 150
+
+class enemy_shooter:
+	const minion_spawnrate = 3
+
+	const spawn_chance = 40
+	const speed = 50
+
+class enemy_slower:
+	const spawn_chance = 80
+	const speed = 400
+	const duration = 5
+	const slow_down = 0.5
 
 class spawning:
 	const SPAWN_EVERY_MS = 250
