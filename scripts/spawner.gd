@@ -9,11 +9,11 @@ var prev_time = 0.0
 const SPAWN_EVERY_MS = Config.spawning.SPAWN_EVERY_MS
 
 func spawn_chance_to_difficulty(chance):
-	if chance < Config.spawning.easy_diff_threshold:
+	if chance < Config.spawning.insane_difficulty_threshold:
 		return EnemyDifficulty.INSANE
-	elif chance < Config.spawning.medium_diff_threshold:
+	elif chance < Config.spawning.hard_difficulty_threshold:
 		return EnemyDifficulty.HARD
-	elif chance < Config.spawning.hard_diff_threshold:
+	elif chance < Config.spawning.medium_difficulty_threshold:
 		return EnemyDifficulty.MEDIUM
 	else:
 		return EnemyDifficulty.EASY

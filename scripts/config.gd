@@ -30,9 +30,9 @@ class enemy_bomb:
 class spawning:
 	const SPAWN_EVERY_MS = 250
 
-	const easy_diff_threshold = 11
-	const medium_diff_threshold = 31
-	const hard_diff_threshold = 71
+	const insane_difficulty_threshold = 11
+	const hard_difficulty_threshold = 31
+	const medium_difficulty_threshold = 71
 
 	const offset = 16
 
