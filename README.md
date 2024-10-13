@@ -14,6 +14,7 @@
 Run the game as an executable
 - Find the executable under the releases tab.
 - There are executables for Linux and Windows, sorry MacOS users!
+    - Please download all three files (.pck, .sh, and the .x86_64) for the Linux release
 
 ### Explanation
 
