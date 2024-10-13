@@ -6,7 +6,7 @@ var direction = Vector2.ZERO
 var homing_time = 15
 
 func _init() -> void:
-	spawn_chance = 5
+	spawn_chance = 10
 	speed = 50
 
 # Called when the node enters the scene tree for the first time.
