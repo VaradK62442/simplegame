@@ -44,6 +44,10 @@ class enemy_slower:
 	const speed = 400
 	const duration = 5
 	const slow_down = 0.5
+	
+class enemy_boss:
+	const spawn_chance = 5
+	const speed = 75
 
 class spawning:
 	const SPAWN_EVERY_MS = 250
@@ -53,6 +57,8 @@ class spawning:
 	const medium_difficulty_threshold = 71
 
 	const offset = 16
+	
+	const spawn_rotation_angle_deg = 50
 
 class player_controller:
 	const speed = 400

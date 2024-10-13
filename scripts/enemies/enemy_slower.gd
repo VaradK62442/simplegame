@@ -19,7 +19,7 @@ func _ready() -> void:
 	target = get_parent().get_node("Player")
 	if target:
 		direction = (target.position - position).normalized()
-		rotation = direction.angle() - PI/2
+		rotation = direction.angle()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
