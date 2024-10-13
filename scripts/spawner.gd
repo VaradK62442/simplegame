@@ -28,6 +28,7 @@ var all_enemies = [
 	preload("res://scenes/enemies/enemy_flashbang.tscn"),
 	preload("res://scenes/enemies/enemy_bomb.tscn"),
 	preload("res://scenes/enemies/enemy_slower.tscn"),
+	preload("res://scenes/enemies/enemy_laser.tscn"),
 ]
 
 func enemies_to_cumsum(enemies) -> Array:
