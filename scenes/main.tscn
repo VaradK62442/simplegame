@@ -47,19 +47,19 @@ script = ExtResource("7_emu4b")
 
 [node name="Heart1" type="Sprite2D" parent="Control"]
 z_index = 5
-position = Vector2(636, 36)
+position = Vector2(698, 15)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_rvfr4")
 
 [node name="Heart2" type="Sprite2D" parent="Control"]
 z_index = 5
-position = Vector2(603, 36)
+position = Vector2(670, 15)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_rvfr4")
 
 [node name="Heart3" type="Sprite2D" parent="Control"]
 z_index = 5
-position = Vector2(570, 36)
+position = Vector2(642, 15)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_rvfr4")
 

@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if is_running:
-		text = "Time: %02d:%02d.%02d" % t.get_time_pretty()
+		text = "%02d:%02d.%02d" % t.get_time_pretty()
