@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4u0m28yvll6d"]
+
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_y3fea"]
+[ext_resource type="AudioStream" uid="uid://cdgv5448173qo" path="res://assets/Tea K Pea - mewmew.mp3" id="2_so4c2"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="3_ak4ua"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.729412)
+layout_mode = 0
+offset_left = -2269.0
+offset_top = -1650.0
+offset_right = -2229.0
+offset_bottom = -1610.0
+scale = Vector2(109.426, 84.6529)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -74.0
+offset_right = 508.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "GAME"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 2.0
+offset_right = 99.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 20
+text = "BUT LIFE GOES ON..."
+
+[node name="Start-game" type="Button" parent="."]
+layout_mode = 0
+offset_left = -41.0
+offset_top = 75.0
+offset_right = 34.0
+offset_bottom = 106.0
+text = "START
+"
+script = ExtResource("1_y3fea")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_so4c2")
+script = ExtResource("3_ak4ua")
+
+[connection signal="pressed" from="Start-game" to="Start-game" method="_on_pressed"]
