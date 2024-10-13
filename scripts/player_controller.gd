@@ -95,8 +95,12 @@ func take_damage(bullet):
 			queue_free()
 			
 		else:
+			# hit indicator
+			player_sprite.modulate = Color(1, 1, 1)
+			await get_tree().create_timer(0.3).timeout
+			player_sprite.modulate = default_sprite_colour
 			
-			#i-frames
+			# i-frames
 			vulnerable = false
 			player_sprite.modulate = invinsible_colour
 			await get_tree().create_timer(1.5).timeout
