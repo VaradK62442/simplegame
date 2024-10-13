@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3k0pnft55pwp"]
+
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_xanix"]
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="2_mb763"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.729412)
+offset_left = -2269.0
+offset_top = -1650.0
+offset_right = -2229.0
+offset_bottom = -1610.0
+scale = Vector2(109.426, 84.6529)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -92.0
+offset_top = -89.0
+offset_right = 508.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "GAME"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -96.0
+offset_top = -15.0
+offset_right = 99.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 20
+text = "BUT LIFE GOES ON..."
+
+[node name="Start-game" type="Button" parent="."]
+offset_left = -41.0
+offset_top = 88.0
+offset_right = 34.0
+offset_bottom = 119.0
+text = "START
+"
+script = ExtResource("1_xanix")
+
+[node name="Tutorial-button" type="Button" parent="."]
+offset_left = -45.0
+offset_top = 57.0
+offset_right = 40.0
+offset_bottom = 88.0
+text = "TUTORIAL
+"
+script = ExtResource("2_mb763")
+
+[connection signal="pressed" from="Start-game" to="Start-game" method="_on_pressed"]
+[connection signal="pressed" from="Tutorial-button" to="Tutorial-button" method="_on_pressed"]
