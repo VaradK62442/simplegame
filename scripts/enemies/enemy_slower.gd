@@ -9,7 +9,7 @@ var duration
 func _init() -> void:
 	slow_down = 0.5
 	duration = 5
-	spawn_chance = 10
+	spawn_chance = 5
 	speed = 400
 
 # Called when the node enters the scene tree for the first time.
