@@ -108,11 +108,6 @@ func spawn_enemies():
 
 	cumsum = enemies_to_cumsum(all_enemies)
 
-	print("Current difficulty: ", current_difficulty)
-	print("all_enmi_difficulties: ", all_enemy_difficulties)
-	print("all_enemies: ", all_enemies)
-	print("cumsum: ", cumsum)
-
 	var rand_num = randi_range(1, max_difficulty)
 	var i = 0
 	while i < cumsum.size() and rand_num > cumsum[i]:
