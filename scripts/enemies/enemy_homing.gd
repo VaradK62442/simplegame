@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	if target and spawntime < homing_time:
 		direction = (target.position - position).normalized()
-		rotation = direction.angle()
+		rotation = direction.angle() + PI/2
 	else:
 		var homing_sprite = get_node("Sprite2D")
 		homing_sprite.modulate = Color(1,1,1)
