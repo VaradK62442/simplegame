@@ -2,24 +2,24 @@ extends EnemyBasic
 
 var direction = Vector2(0, 1).rotated(rotation)
 
-var life_duration: int = 20
-var color_change_interval: float = 5
+var life_duration: int = Config.enemy_bomb.life_duration
+var color_change_interval: float = Config.enemy_bomb.color_change_interval
 var color_change_timer: float = 0
-var flicker_duration: float = 0.1
-var ratio: float = 0.75
+var flicker_duration: float = Config.enemy_bomb.flicker_duration
+var ratio: float = Config.enemy_bomb.ratio
 
 var sprite
 
-var main_color = Color(0, 1, 1)
-var flicker_color = Color(1, 0, 0)
+var main_color = Config.enemy_bomb.main_color
+var flicker_color = Config.enemy_bomb.flicker_color
 
-var enemy = load("res://scenes/enemies/enemy_shooter_minion.tscn")
-var n_debris = 10
+var enemy = Config.enemy_bomb.enemy
+var n_debris = Config.enemy_bomb.n_debris
 
 
 func _init() -> void:
-	spawn_chance = 10
-	speed = 50
+	spawn_chance = Config.enemy_bomb.spawn_chance
+	speed = Config.enemy_bomb.speed
 
 
 # Called when the node enters the scene tree for the first time.

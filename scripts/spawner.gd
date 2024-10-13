@@ -6,19 +6,19 @@ var screen
 var t
 var current_time = 0.0
 var prev_time = 0.0
-const SPAWN_EVERY_MS = 250
+const SPAWN_EVERY_MS = Config.spawning.SPAWN_EVERY_MS
 
 func spawn_chance_to_difficulty(chance):
-	if chance < 11:
+	if chance < Config.spawning.easy_diff_threshold:
 		return EnemyDifficulty.INSANE
-	elif chance < 31:
+	elif chance < Config.spawning.medium_diff_threshold:
 		return EnemyDifficulty.HARD
-	elif chance < 71:
+	elif chance < Config.spawning.hard_diff_threshold:
 		return EnemyDifficulty.MEDIUM
 	else:
 		return EnemyDifficulty.EASY
 
-@export var offset = 16
+@export var offset = Config.spawning.offset
 
 
 var all_enemies = [
@@ -35,7 +35,6 @@ func enemies_to_cumsum(enemies) -> Array:
 	for e in enemies:
 		max_difficulty += e.instantiate().spawn_chance
 		cumsum.append(max_difficulty)
-		print(cumsum)
 	return cumsum
 
 # Called when the node enters the scene tree for the first time.
@@ -81,9 +80,9 @@ func spawn_enemies():
 	var enemy = all_enemies[i].instantiate()
 	var rand_pos = get_random_pos()
 	get_parent().add_child(enemy)
-	print(enemy.name)
 	enemy.position = Vector2(rand_pos[0], rand_pos[1])
 	enemy.rotation_degrees = randi_range(0, 360)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

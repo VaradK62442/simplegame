@@ -1,8 +1,8 @@
 extends Area2D
 class_name EnemyBasic
 
-var spawn_chance: int = 50 #proportion of spawning in the enemy array, out of 100
-var speed: int = 100
+var spawn_chance: int = Config.enemy_basic.spawn_chance
+var speed: int = Config.enemy_basic.speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
