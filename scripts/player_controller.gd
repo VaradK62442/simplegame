@@ -11,6 +11,8 @@ var default_sprite_colour
 var invinsible_colour
 var death_frames = Config.player_controller.death_frames
 var gameover_screen
+var sprite_val_position
+var sprite_val_texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +20,8 @@ func _ready() -> void:
 	player_sprite = get_node("Sprite2D")
 	default_sprite_colour = player_sprite.modulate
 	invinsible_colour = default_sprite_colour
+	sprite_val_position = player_sprite.position
+	sprite_val_texture = player_sprite.texture
 	invinsible_colour[3] = Config.player_controller.invinsible_colour_alpha
 	invinsible_colour[0] = Config.player_controller.invinsible_colour_red
 	gameover_screen = load("res://scenes/gameover.tscn").instantiate()
@@ -56,10 +60,6 @@ func take_damage(bullet):
 			var end_time = get_parent().get_node("Control").get_node("Time").text
 			get_parent().get_node("Control").queue_free()
 			
-			# delete player sprite
-			player_sprite.queue_free()
-			position.x = 10_000
-			
 			# change music
 			var music_player = get_parent().get_node("AudioStreamPlayer2D")
 			music_player.switch_track("res://assets/endtheme.mp3")
@@ -69,10 +69,13 @@ func take_damage(bullet):
 			var directions = [Vector2(0, -1), Vector2(-0.5, -0.866), Vector2(-0.5, 0.866), Vector2(0, 1), Vector2(0.5, 0.866), Vector2(0.5, -0.866)]
 			var bits = [Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new(), Sprite2D.new()]
 			
+			# delete player sprite
+			player_sprite.queue_free()
+			
 			for sprite in bits:
 				sprite.scale = Vector2(2.0, 2.0)
-				sprite.position = player_sprite.position
-				sprite.texture = player_sprite.texture
+				sprite.position = sprite_val_position
+				sprite.texture = sprite_val_texture
 				sprite.modulate = default_sprite_colour
 				add_child(sprite)
 			
@@ -95,6 +98,7 @@ func take_damage(bullet):
 			for sprite in bits:
 				sprite.queue_free()
 			
+			position.x = 10_000
 			
 		else:
 			# hit indicator
