@@ -2,7 +2,7 @@ extends Node2D
 
 
 class enemy_basic:
-	const spawn_chance = 80 # proportion of spawning in the enemy array, out of 100
+	const spawn_chance = 100 # proportion of spawning in the enemy array, out of 100
 	const speed = 100
 
 class enemy_homing:
@@ -43,7 +43,7 @@ class enemy_slower:
 	const spawn_chance = 80
 	const speed = 400
 	const duration = 5
-	const slow_down = 0.5
+	const slow_down = 0.25
 	
 class enemy_boss:
 	const spawn_chance = 5
