@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdty5ylh0kdfp"]
+[gd_scene load_steps=3 format=3 uid="uid://cdty5ylh0kdfp"]
 
 [ext_resource type="Script" path="res://scripts/hud_timer.gd" id="1_conqh"]
+[ext_resource type="Texture2D" uid="uid://be7koyfymv552" path="res://assets/heart.png" id="2_jxbid"]
 
 [node name="Control" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -10,16 +12,28 @@ offset_bottom = 40.0
 
 [node name="Time" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Time: 00:00.00"
+offset_left = 637.0
+offset_top = 27.0
+offset_right = 732.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 18
+text = "00:00.00"
 script = ExtResource("1_conqh")
 
-[node name="Health" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -1.0
-offset_top = 18.0
-offset_right = 84.0
-offset_bottom = 41.0
-text = "Health: 3/3"
+[node name="Heart1" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(698, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jxbid")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(670, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jxbid")
+
+[node name="Heart3" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(642, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jxbid")

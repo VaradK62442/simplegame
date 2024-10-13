@@ -34,9 +34,9 @@ text = "BUT LIFE GOES ON..."
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 0
-offset_left = -63.0
+offset_left = -58.0
 offset_top = 27.0
-offset_right = 93.0
+offset_right = 98.0
 offset_bottom = 49.0
 theme_override_font_sizes/font_size = 15
 text = "Time: 00:00.00"
