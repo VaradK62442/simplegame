@@ -12,7 +12,7 @@
 ### How To Run
 
 Run the game as an executable
-- Find an executable in the executables folder
+- Find the executable under the releases tab.
 - There are executables for Linux and Windows, sorry MacOS users!
 
 ### Explanation
