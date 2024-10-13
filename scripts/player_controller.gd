@@ -109,7 +109,6 @@ func slow_down(bullet,slow_down,duration):
 	bullet.queue_free()
 
 func _on_slowdowntimer_timeout():
-	print("fast again")
 	speed_multiplier = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
