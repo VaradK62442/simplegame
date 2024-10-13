@@ -12,8 +12,10 @@
 ### How To Run
 
 Run the game as an executable
-- Find an executable in the executables folder
+- Find an executable in the respective tab under the Releases section
 - There are executables for Linux and Windows, sorry MacOS users!
+    - Please download all three files (.pck, .sh, and the .x86_64) for the Linux distribution
+    - Pleaase download the .exe file and the .pck for the Windows distribution
 
 ### Explanation
 
