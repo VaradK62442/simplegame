@@ -7,7 +7,7 @@ var turned = false
 
 var enemy = load("res://scenes/enemies/enemy_homing.tscn")
 
-var minion_spawnrate = 8 # seconds
+var minion_spawnrate = 4 # seconds
 
 func _init() -> void:
 	spawn_chance = Config.enemy_boss.spawn_chance
@@ -22,7 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not turned:
-		direction = (target.position - position).normalized()
+		direction = (Vector2(0.0, 0.0) - position).normalized()
 		rotation = direction.angle() - PI/2
 		turned = true
 	position += Vector2(0, 1).rotated(rotation) * speed * delta
@@ -33,9 +33,9 @@ func _process(delta: float) -> void:
 		var minion_two = enemy.instantiate()
 		var minion_three = enemy.instantiate()
 		
-		minion_one.position = position + Vector2(10, 0)
-		minion_two.position = position + Vector2(-7, 7)
-		minion_three.position = position + Vector2(-7, -7)
+		minion_one.position = position + Vector2(30, 0)
+		minion_two.position = position + Vector2(-21, 21)
+		minion_three.position = position + Vector2(-21, -21)
 		minion_one.rotation = rotation + 60
 		minion_two.rotation = rotation - 60
 		minion_three.rotation = rotation - 120
