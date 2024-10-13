@@ -61,8 +61,8 @@ func take_damage(bullet):
 			
 			# change music
 			var music_player = get_parent().get_node("AudioStreamPlayer2D")
-			music_player.volume_db = -10.0
-			music_player.pitch_scale = 0.5
+			music_player.switch_track("res://assets/endtheme.mp3")
+			music_player.volume_db = 10
 			
 			# create death particles
 			var directions = [Vector2(0, -1), Vector2(-0.5, -0.866), Vector2(-0.5, 0.866), Vector2(0, 1), Vector2(0.5, 0.866), Vector2(0.5, -0.866)]
