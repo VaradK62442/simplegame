@@ -106,6 +106,7 @@ func take_damage(bullet):
 func slow_down(bullet,slow_down,duration):
 	$slowdowntimer.start(duration)
 	speed_multiplier = slow_down
+	bullet.queue_free()
 
 func _on_slowdowntimer_timeout():
 	print("fast again")

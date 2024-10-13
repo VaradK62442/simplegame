@@ -1,22 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf5rkiu0j6nc3"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_flashbang.gd" id="1_hs65a"]
+[ext_resource type="Texture2D" uid="uid://dg368ejtp610p" path="res://assets/circle.svg" id="2_h2781"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yawgi"]
-size = Vector2(20, 28)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_fjyfv"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r66jk"]
 
 [node name="EnemyFlashbang" type="Area2D"]
 script = ExtResource("1_hs65a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.68)
-shape = SubResource("RectangleShape2D_yawgi")
+shape = SubResource("CircleShape2D_r66jk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.889303, 0.841491, 0.545277, 1)
-scale = Vector2(20.0774, 19.5655)
-texture = SubResource("CanvasTexture_fjyfv")
+scale = Vector2(0.2, 0.195)
+texture = ExtResource("2_h2781")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
