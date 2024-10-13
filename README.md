@@ -9,10 +9,11 @@
 - Paul Anderson
 - Gavin Angus
 
-### Song Credits
+### How To Run
 
-- [mewmew](https://freemusicarchive.org/music/tea-k-pea/single/mewmew/) by [Tea K Pea](https://freemusicarchive.org/music/tea-k-pea/) is licensed under a [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
-- Game Over Music by Rauhit Krishnan
+Run the game as an executable
+- Find an executable in the executables folder
+- There are executables for Linux and Windows, sorry MacOS users!
 
 ### Explanation
 
@@ -23,3 +24,8 @@
 - Some enemies hurt you - others apply statuses
 - You have 3 lives
 - Go for the highest time!
+
+### Song Credits
+
+- [mewmew](https://freemusicarchive.org/music/tea-k-pea/single/mewmew/) by [Tea K Pea](https://freemusicarchive.org/music/tea-k-pea/) is licensed under a [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
+- Game Over Music by Rauhit Krishnan
