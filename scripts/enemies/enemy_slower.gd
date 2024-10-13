@@ -17,8 +17,9 @@ func _ready() -> void:
 	super._ready()
 	await get_tree().create_timer(0.1).timeout
 	target = get_parent().get_node("Player")
-	direction = (target.position - position).normalized()
-	rotation = direction.angle() - PI/2
+	if target:
+		direction = (target.position - position).normalized()
+		rotation = direction.angle() - PI/2
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
