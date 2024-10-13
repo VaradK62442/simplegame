@@ -53,6 +53,8 @@ class spawning:
 	const medium_difficulty_threshold = 71
 
 	const offset = 16
+	
+	const spawn_rotation_angle_deg = 50
 
 class player_controller:
 	const speed = 400

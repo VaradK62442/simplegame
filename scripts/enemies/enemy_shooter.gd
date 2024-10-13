@@ -1,4 +1,5 @@
 extends EnemyBasic
+class_name EnemyShooter
 
 var target
 var spawntime

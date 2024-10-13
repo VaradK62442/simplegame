@@ -122,9 +122,11 @@ func spawn_enemies():
 	enemy.add_to_group("enemies")
 	var rand_pos = get_random_pos()
 	get_parent().add_child(enemy)
-	enemy.position = Vector2(rand_pos[0], rand_pos[1])
 	enemy.rotation_degrees = randi_range(0, 360)
-
+	enemy.position = Vector2(rand_pos[0], rand_pos[1])
+	if enemy.get_class() != "EnemyShooter":
+		var rotation = randf_range(-Config.spawning.spawn_rotation_angle_deg, Config.spawning.spawn_rotation_angle_deg)
+		enemy.set_global_transform(enemy.get_global_transform().looking_at($"../Player".global_position).rotated_local(deg_to_rad(rotation)))
 
 func process_enemy_difficulty(all_enemies) -> Array:
 	for e in all_enemies:
